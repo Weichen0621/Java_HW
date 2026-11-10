@@ -1,0 +1,30 @@
+
+public class p09 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car09 car1;
+		car1 = new Car09();
+		
+		//在類別外存取欄位時，要指向物件的變數名稱.欄位名稱
+		car1.num = 1234; 
+		car1.gas = 20.5;
+	}
+
+}
+
+class Car09 {
+	int num;
+	double gas;
+	
+	void show() { //因為是void所以不會有任何傳回值
+		
+		//在類別內存取欄位就可直接使用
+		System.out.println("車號是" + num);
+		System.out.println("汽油量是" + gas);
+		
+		//或也可以在物件前面加this.
+		System.out.println("車號是" + this.num);
+		System.out.println("汽油量是" + this.gas);
+	}
+}

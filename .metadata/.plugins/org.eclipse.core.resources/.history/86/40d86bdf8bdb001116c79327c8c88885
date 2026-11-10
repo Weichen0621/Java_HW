@@ -1,0 +1,36 @@
+
+public class p22 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car car1;
+		car1 = new Car();
+		
+		car1.setNumGas(1234, 20.5);
+		car1.show();
+		
+		System.out.println("指定不正確的汽油量(-10.0)來測試函式");
+		
+		car1.setNumGas(1234, -10.0);
+		car1.show();
+	}
+
+}
+
+//雖然型別為private無法直接做存取，但設為public就可存取，並可在裡頭設置判斷條件來限制範圍
+class Car22{
+	private int num22;
+	private double gas22;
+	
+	public void setNumGas(int n, double g) {
+		if(g > 0 && g < 100) {	
+			num22 = n;
+			gas22 = g;
+		
+			System.out.println("將車號設為" + num22 + "，汽油量設為" + gas22);
+		} else {
+			System.out.println(g + "不是正確的汽油量");
+			System.out.println("因此無法變更汽油量");
+		}
+	}
+}
